@@ -1,0 +1,62 @@
+<div class="gridster" ng-show="loaded.me && loaded.music && loaded.github && loaded.beer">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="widget widget-github" ng-show="github">
+      <h1 class="title"><span>GitHub</span></h1>
+      <ul>
+        <li class="last-commit">
+          <h4>"<a ng-href="{{github.lastPush.commit_url}}">{{github.lastPush.commit_message}}</a>" to <a ng-href="{{github.lastPush.repo_url}}">{{github.lastPush.repo_name}}</a></h4>
+          <h3>last commit</h3>
+        </li>
+        <li class="commits">
+          <h2>{{github.contributions}}</h2>
+          <h3>Commits this year</h3>
+        </li>
+      </ul>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="widget widget-lastfm" ng-show="music">
+      <h1 class="title"><span>Lastfm</span></h1>
+      <ul>
+        <li class="songs-this-week">
+          <h2>{{music.weeklyPlays}}</h2>
+          <h3>songs this week</h3>
+        </li>
+        <li class="song">
+          <h4>"<a ng-href="{{song.url}}">{{song.name}}</a>" <br>by<br> <a ng-href="{{song.artistUrl}}">{{song.artist}}</a></h4>
+          <h3>last song</h3>
+        </li>
+      </ul>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="widget widget-untappd" ng-show="beer">
+      <h1 class="title"><span>Untappd</span></h1>
+      <ul>
+        <li class="total">
+          <h2>{{beer.stats.total}}</h2>
+          <h3>total beers</h3>
+        </li>
+        <li class="unique">
+          <h2>{{beer.stats.unique}}</h2>
+          <h3>unique beers</h3>
+        </li>
+        <li class="badges">
+          <h2>{{beer.stats.badges}}</h2>
+          <h3>badges</h3>
+        </li>
+      </ul>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="widget widget-steam" ng-show="gaming">
+      <h1 class="title"><span>Gaming</span></h1>
+      <ul>
+        <li>
+          <span ng-repeat="game in gaming.recent.games | limitTo: 3">
+            <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{game.appid}}/{{game.img_logo_url}}.jpg" alt="">
+          </span>
+            <h3>recent games</h3>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</div>

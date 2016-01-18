@@ -1,35 +1,35 @@
-<html>
+<html ng-app="personalDashboard">
 <head>
-  <title>Hey</title>
-  <script type="text/javascript" src="application.js"></script>
-  <link rel="stylesheet" type="text/css" href="gridster.css">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Personal Dashboard</title>
+
+  <style>
+    /* Inline Style to support ng-cloak */
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+
+    h1 {
+      padding-top: 50px;
+    }
+  </style>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/gridster.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <script type="text/javascript" src="js/application.js"></script>
+  <script src="js/controllers.js" type="text/javascript"></script>
 
 </head>
-<body>
-  <div id="container">
-    <div class="gridster">
-      <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="widget widget-github">
-          <h1 class="title"><span>GitHub</span></h1>
-          <ul>
-            <li class="Repos">
-              <h2>30</h2>
-              <h3>Repos</h3>
-            </li>
-            <li class="Followers">
-              <h2>200</h2>
-              <h3>followers</h3>
-            </li>
-            <li class="Stars">
-              <h2>3423</h2>
-              <h3>stargazers</h3>
-            </li>
-          </ul>
-        </li>
+<body ng-controller="apiCtrl">
 
-      </ul>
-    </div>
+  <h1>Personal Dashboard</h1>
+
+  <div class="container" ui-view>
   </div>
+
 </body>
 </html>
